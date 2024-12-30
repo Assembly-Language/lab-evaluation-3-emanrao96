@@ -19,25 +19,21 @@ asmfunc PROC array:DWORD , p2:DWORD
    mov eax,[esi]
    TEST eax,1h
    jz skip
-   mov ebx,eax                ;convert ax to eax
-   add sum,ebx                 ;add eax to sum
+   add ebx,eax                 
                     
     skip:
          add esi,4                  ;move to next element
-         loop loop1                   ;loop until ecx is 0
+         loop next                  ;loop until ecx is 0
 
    
-    
-skip:
-add esi,type array
-LOOP next
+
 
 
 
 
 mov ecx,0
 ;total positive numbers value
-mov edx,offset msg1
+mov edx,offset msg2
 call writestring
 call crlf
 mov eax,0
