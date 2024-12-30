@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 
@@ -8,7 +7,7 @@
 extern "C" {
 #endif
 
-void __stdcall asmfunc(void);
+void __stdcall asmfunc(int array[],int length );
 
 #ifdef __cplusplus
 }
@@ -20,9 +19,10 @@ int main() {
     int abc;
     printf("assembly proc calling from  from C! \n");
 getch();
-
+    int array[8] = {-1,-2,-3,1,2,3,4,5};
     
-    asmfunc(); //assembly proc calling
+    
+     asmfunc(array,8); //assembly proc calling
    
    getch();
     
